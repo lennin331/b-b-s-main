@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Broke Buddies Splitter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <h1>Broke Buddies Splitter</h1>
+            </div>
+            <p class="tagline">Split expenses like a pro with your buddies!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <h2><i class="fas fa-plus-circle"></i> Add Expenses</h2>
+                    
+                    <div class="form-group">
+                        <label for="payer">Who paid?</label>
+                        <input type="text" id="payer" placeholder="Enter name of person who paid">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description (optional)</label>
+                        <input type="text" id="description" placeholder="What was this expense for?">
+                    </div>
+
+                    <div class="form-group" id="participantsGroup">
+                        <label>Who should split this?</label>
+                        <div class="participants-input">
+                            <input type="text" id="participant1" placeholder="Person 1" class="participant-input">
+                            <input type="text" id="participant2" placeholder="Person 2" class="participant-input">
+                            <input type="text" id="participant3" placeholder="Person 3" class="participant-input">
+                            <input type="text" id="participant4" placeholder="Person 4" class="participant-input">
+                        </div>
+                        <button type="button" id="addParticipant" class="btn-secondary">
+                            <i class="fas fa-plus"></i> Add More
+                        </button>
+                    </div>
+
+                    <button type="button" id="addExpense" class="btn-primary">
+                        <i class="fas fa-plus"></i> Add Expense
+                    </button>
+                </div>
+            </section>
+
+            <!-- Expenses List -->
+            <section class="expenses-section">
+                <div class="card">
+                    <h2><i class="fas fa-list"></i> Expenses Summary</h2>
+                    <div id="expensesList" class="expenses-list">
+                        <div class="empty-state">120
+                            <i class="fas fa-receipt"></i>
+                            <p>No expenses added yet</p>
+                            <span>Add your first expense to get started!</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <div class="card">
+                    <h2><i class="fas fa-calculator"></i> Split Results</h2>
+                    <div id="resultsContainer" class="results-container">
+                        <div class="empty-state">
+                            <i class="fas fa-chart-pie"></i>
+                            <p>No calculations yet</p>
+                            <span>Add expenses to see the split results!</span>
+                        </div>
+                    </div>
+                    <button type="button" id="calculateSplit" class="btn-primary" disabled>
+                        <i class="fas fa-calculator"></i> Calculate Split
+                    </button>
+                </div>
+            </section>
+
+            <!-- Actions Section -->
+            <section class="actions-section">
+                <div class="card">
+                    <h2><i class="fas fa-tools"></i> Actions & Export</h2>
+                    <div class="actions-grid">
+                        <button type="button" id="exportCSV" class="btn-secondary" disabled>
+                            <i class="fas fa-file-csv"></i> Export to CSV
+                        </button>
+                        <button type="button" id="saveSettlement" class="btn-secondary" disabled>
+                            <i class="fas fa-save"></i> Save Settlement
+                        </button>
+                        <button type="button" id="clearAll" class="btn-danger" disabled>
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                        <button type="button" id="loadSettlement" class="btn-secondary">
+                            <i class="fas fa-folder-open"></i> Load Settlement
+                        </button>
+                    </div>
+                    <div id="savedSettlements" class="saved-settlements">
+                        <h3><i class="fas fa-history"></i> Saved Settlements</h3>
+                        <div id="settlementsList" class="settlements-list">
+                            <div class="empty-state">
+                                <i class="fas fa-folder"></i>
+                                <p>No saved settlements</p>
+                                <span>Save your first settlement to see it here!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Broke Buddies Splitter. Made with <i class="fas fa-heart"></i> for friends who split bills!</p>
+        </footer>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html> 
